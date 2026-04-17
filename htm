@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Mock ID Generator</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 320px;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Digital ID (Mock)</h2>
+  <p id="name">Imię: ---</p>
+  <p id="id">ID: ---</p>
+  <p id="expiry">Ważność: ---</p>
+
+  <button onclick="generate()">Generuj</button>
+</div>
+
+<script>
+function randomID() {
+  return Math.floor(Math.random() * 90000000000) + 10000000000;
+}
+
+function generate() {
+  document.getElementById("name").innerText = "Imię: Adam Testowy";
+  document.getElementById("id").innerText = "ID: " + randomID();
+  document.getElementById("expiry").innerText = "Ważność: 2030-01-01";
+}
+</script>
+
+</body>
+</html>
